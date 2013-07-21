@@ -5,7 +5,7 @@ var libpath = require('path'),
     mime = require('mime');
 
 var port = process.argv[2] || 8888;
-var path = ".";
+var path = process.argv[3] || ".";
 
 var requestHandler = function (request, response) {
 
