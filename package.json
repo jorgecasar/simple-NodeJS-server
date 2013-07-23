@@ -1,0 +1,13 @@
+{
+  "name": "server-simple",
+  "version": "0.0.1",
+  "description": "",
+  "homepage": "",
+  "author": {
+    "name": "Jorge del Casar",
+    "site": "http://twitter.com/jorgecasar"
+  },
+  "dependences": {
+    "mime": "*"
+  }
+}
