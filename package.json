@@ -11,7 +11,7 @@
     "type" : "git",
     "url" : "https://gist.github.com/5882991.git"
   },
-  "dependences": {
+  "dependencies": {
     "mime": "*"
   }
 }
