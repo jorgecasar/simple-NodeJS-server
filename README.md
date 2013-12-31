@@ -1,4 +1,4 @@
-Simple NodeJS Serverhttps://github.com/jorgecasar/simple-NodeJS-server.git
+Simple NodeJS Server
 ====================
 
 A NodeJS server very simple to serve statics. Customized port, path and HTML5 Push State.
@@ -10,7 +10,7 @@ The default arguments are set for a fast start but you can customize them to mak
 2. Go to "simple-NodeJs-server'
 3. Install dependencies: ```npm install -d```
 4. Go to your project, p.e '[workspace-root]/myProject/'
-5. Start the Node server: node ../simple-node-server/server
+5. Start the Node server: ```node ../simple-node-server/server```
 6. Enjoy your new server at http://localhost:8888
 
 ### Arguments
