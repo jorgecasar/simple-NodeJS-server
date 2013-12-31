@@ -6,6 +6,7 @@ var libpath = require('path'),
 
 var port = process.argv[2] || 8888;
 var path = process.argv[3] || ".";
+var pushStateDisabled = process.argv[4] == true;
 
 var requestHandler = function (request, response) {
 
@@ -14,12 +15,16 @@ var requestHandler = function (request, response) {
 
     fs.exists(filename, function (exists) {
         if (!exists) {
-            response.writeHead(404, {
-                "Content-Type": "text/plain"
-            });
-            response.write("404 Not Found\n");
-            response.end();
-            return;
+            if( pushStateDisabled ) {
+                response.writeHead(404, {
+                    "Content-Type": "text/plain"
+                });
+                response.write("404 Not Found\n");
+                response.end();
+                return;
+            } else {
+                filename = libpath.join(path, '/index.html');
+            }
         }
 
         if (fs.statSync(filename).isDirectory()) {
@@ -50,4 +55,6 @@ var server = http.createServer();
 server.addListener('request', requestHandler);
 server.listen(port);
 
-console.log("Static file server running at\n  => http://localhost:" + port + "/\nCTRL + C to shutdown");
+console.log("Static file server running at\n" +
+    "=> http://localhost:" + port + "/\n" + 
+    "CTRL + C to shutdown");
